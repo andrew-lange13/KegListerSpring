@@ -24,6 +24,9 @@ public class Ad {
     @Column
     private String type;
 
+    @OneToOne
+    private User user;
+
     public long getId() {
         return id;
     }
@@ -88,6 +91,14 @@ public class Ad {
         this.type = type;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Ad() {
     }
 
@@ -123,5 +134,17 @@ public class Ad {
         this.phone = phone;
         this.image = image;
         this.type = type;
+    }
+
+    public Ad(long id, long userId, String name, String address, String website, String phone, String image, String type, User user) {
+        this.id = id;
+        this.userId = userId;
+        this.name = name;
+        this.address = address;
+        this.website = website;
+        this.phone = phone;
+        this.image = image;
+        this.type = type;
+        this.user = user;
     }
 }
