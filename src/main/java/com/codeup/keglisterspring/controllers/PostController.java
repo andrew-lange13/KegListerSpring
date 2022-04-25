@@ -16,7 +16,7 @@ public class PostController {
 
     @GetMapping("/")
     public String posts(Model model){
-        model.addAttribute("ad", postDao.findAll());
+        model.addAttribute("post", postDao.findAll());
         return "posts/index";
     }
 }
