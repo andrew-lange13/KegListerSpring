@@ -5,132 +5,128 @@
 	<meta charset="UTF-8"/>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
 	      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">	<style>
-    /* Box sizing rules */
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
-
-    /* Remove default margin */
-    body,
-    h1,
-    h2,
-    h3,
-    h4,
-    p,
-    figure,
-    blockquote,
-    dl,
-    dd {
-        margin: 0;
-    }
-
-    /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-    ul[role='list'],
-    ol[role='list'] {
-        list-style: none;
-    }
-
-    /* Set core root defaults */
-    html:focus-within {
-        scroll-behavior: smooth;
-    }
-
-    /* Set core body defaults */
-    body {
-        min-height: 100vh;
-        text-rendering: optimizeSpeed;
-        line-height: 1.5;
-    }
-
-    /* A elements that don't have a class get default styles */
-    a:not([class]) {
-        text-decoration-skip-ink: auto;
-    }
-
-    /* Make images easier to work with */
-    img,
-    picture {
-        max-width: 100%;
-        display: block;
-    }
-
-    /* Inherit fonts for inputs and buttons */
-    input,
-    button,
-    textarea,
-    select {
-        font: inherit;
-    }
-
-    /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
-    @media (prefers-reduced-motion: reduce) {
-        html:focus-within {
-            scroll-behavior: auto;
-        }
-
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+	<style>
+        /* Box sizing rules */
         *,
         *::before,
         *::after {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-            scroll-behavior: auto !important;
+            box-sizing: border-box;
         }
-    }
 
-</style>
+        /* Remove default margin */
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        p,
+        figure,
+        blockquote,
+        dl,
+        dd {
+            margin: 0;
+        }
+
+        /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+        ul[role='list'],
+        ol[role='list'] {
+            list-style: none;
+        }
+
+        /* Set core root defaults */
+        html:focus-within {
+            scroll-behavior: smooth;
+        }
+
+        /* Set core body defaults */
+        body {
+            min-height: 100vh;
+            text-rendering: optimizeSpeed;
+            line-height: 1.5;
+        }
+
+        /* A elements that don't have a class get default styles */
+        a:not([class]) {
+            text-decoration-skip-ink: auto;
+        }
+
+        /* Make images easier to work with */
+        img,
+        picture {
+            max-width: 100%;
+            display: block;
+        }
+
+        /* Inherit fonts for inputs and buttons */
+        input,
+        button,
+        textarea,
+        select {
+            font: inherit;
+        }
+
+        /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+        @media (prefers-reduced-motion: reduce) {
+            html:focus-within {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+	</style>
 
 </head>
 <body>
 <main>
 	<header th:fragment="header">
-		<header class="p-3 bg-dark text-white">
-			<div class="container">
-				<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-					<a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-						<svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
-							<use xlink:href="#bootstrap"/>
-						</svg>
-					</a>
-
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white fixed-top">
+			<div class="container-fluid">
+				<div class="d-flex align-items-center justify-content-center justify-content-lg-start">
 					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-						<li><a href="/posts" class="nav-link px-2 text-secondary">Home</a></li>
-						<li><a href="/posts/create" class="nav-link px-2 text-white">Create a Post</a></li>
+						<li><a href="/" class="navbar-brand nav-link px-2 text-secondary">Home</a></li>
+						<li><a href="/create" class="nav-link px-2 text-white">Add a Brewery</a></li>
 						<!--						<li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>-->
 						<!--						<li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>-->
 						<!--						<li><a href="#" class="nav-link px-2 text-white">About</a></li>-->
 					</ul>
-
-					<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+				</div>
+				<div class="d-flex">
+					<form class="col-12 col-lg-auto m-2">
 						<input type="search" class="form-control form-control-dark" placeholder="Search..."
 						       aria-label="Search">
 					</form>
 
-					<div class="text-end">
-						<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-							<li>
-								<form th:action="@{/login}" th:method="get">
-									<button class="btn btn-outline-light me-2">Login</button>
-								</form>
-							</li>
-							<li>
-								<form th:action="@{/sign-up}" th:method="get">
-									<button class="btn btn-warning">Sign-up</button>
-								</form>
-							</li>
-							<li>
-								<form th:action="@{/logout}" th:method="post">
-									<button class="btn-danger btn">Logout</button>
-								</form>
-							</li>
-						</ul>
-					</div>
+
+					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+						<li>
+							<form th:action="@{/login}" th:method="get">
+								<button class="btn btn-outline-light m-2">Login</button>
+							</form>
+						</li>
+						<li>
+							<form th:action="@{/sign-up}" th:method="get">
+								<button class="btn btn-warning m-2">Sign-up</button>
+							</form>
+						</li>
+						<li>
+							<form th:action="@{/logout}" th:method="post">
+								<button class="btn-danger btn m-2">Logout</button>
+							</form>
+						</li>
+					</ul>
 				</div>
 			</div>
-		</header>
+			</div>
+		</nav>
 		<br>
 		<br>
 		<br>
@@ -138,16 +134,15 @@
 </main>
 
 
-
 <div th:fragment="createForm">
 	<div class="form-floating mb-3">
-		<input type="text" class="form-control" th:field="*{title}" id="title" placeholder="fastfood place"/>
-		<p th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></p>
+		<input type="text" class="form-control" th:field="*{name}" id="title" placeholder="fastfood place"/>
+		<p th:if="${#fields.hasErrors('title')}" th:errors="*{name}"></p>
 		<label for="title">Title</label>
 	</div>
 	<div class="form-floating mb-3">
-		<input type="text" class="form-control" th:field="*{body}" id="description" placeholder="description">
-		<p th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></p>
+		<input type="text" class="form-control" th:field="*{address}" id="description" placeholder="description">
+		<p th:if="${#fields.hasErrors('body')}" th:errors="*{address}"></p>
 		<label for="description">Description</label>
 	</div>
 	<button class="btn btn-lg btn-primary" type="submit">Submit</button>
@@ -162,7 +157,7 @@
 						<use xlink:href="#bootstrap"/>
 					</svg>
 				</a>
-				<span class="text-muted">&copy; 2021 I Like Turtles, Inc</span>
+				<span class="text-muted">&copy; 2022 I Like Turtles, Inc</span>
 			</div>
 
 			<ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
