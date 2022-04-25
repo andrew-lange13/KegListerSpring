@@ -1,7 +1,7 @@
 package com.codeup.keglisterspring.repositories;
 
-import com.codeup.keglisterspring.models.Ad;
+import com.codeup.keglisterspring.models.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface PostRepository extends JpaRepository<Ad, Long> {
+public interface PostRepository extends JpaRepository<Post, Long> {
 }
