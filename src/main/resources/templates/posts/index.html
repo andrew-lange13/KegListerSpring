@@ -17,6 +17,18 @@
 						<div class="feature bg-primary bg-gradient text-white rounded-3 mb-4 mt-n4">
 							<h5 class="p-2 mt-2" th:text="${post.type}"></h5>
 						</div>
+						<h2 class="fs-4 fw-bold" th:text="${post.name}"></h2>
+						<p class="mb-0" th:text="${post.address}"></p>
+						<a href="${ad.website}" th:text="${post.name}">Website</a>
+						<p th:text="${post.phone}"></p>
+						<div>
+							<img th:src="${post.image}" class="img-fluid">
+						</div>
+						<p th:text="${post.type}"></p>
+						<div>
+							<a href="https://www.google.com/maps/search/${post.name}${post.address}" target="_blank">view
+								on google maps</a>
+						</div>
 					</div>
 					<div class="text-center">
 						<a th:href="'/posts/' + ${post.id}" class="btn btn-primary">Details</a>
