@@ -63,4 +63,10 @@ public class PostController {
         post.setUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
         return "redirect:/";
     }
+
+    @GetMapping("/{id}/delete")
+    public String getPostDelete(@PathVariable long id){
+        postDao.deleteById(id);
+        return "redirect:/";
+    }
 }
