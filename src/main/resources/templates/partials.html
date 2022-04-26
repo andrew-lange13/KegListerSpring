@@ -136,14 +136,29 @@
 
 <div th:fragment="createForm">
 	<div class="form-floating mb-3">
-		<input type="text" class="form-control" th:field="*{name}" id="title" placeholder="fastfood place"/>
-		<p th:if="${#fields.hasErrors('title')}" th:errors="*{name}"></p>
-		<label for="title">Title</label>
+		<input type="text" class="form-control" th:field="*{name}" id="name" placeholder="Brewery Name"/>
+		<p th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></p>
+		<label for="name">Brewery Name</label>
 	</div>
 	<div class="form-floating mb-3">
-		<input type="text" class="form-control" th:field="*{address}" id="description" placeholder="description">
-		<p th:if="${#fields.hasErrors('body')}" th:errors="*{address}"></p>
-		<label for="description">Description</label>
+		<input type="text" class="form-control" th:field="*{address}" id="address" placeholder="address">
+		<p th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></p>
+		<label for="address">Address</label>
+	</div>
+	<div class="form-floating mb-3">
+		<input type="text" class="form-control" th:field="*{website}" id="website" placeholder="website">
+		<p th:if="${#fields.hasErrors('website')}" th:errors="*{website}"></p>
+		<label for="address">Website</label>
+	</div>
+	<div class="form-floating mb-3">
+		<input type="text" class="form-control" th:field="*{phone}" id="phone" placeholder="phone">
+		<p th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></p>
+		<label for="phone">Phone</label>
+	</div>
+	<div class="form-floating mb-3">
+		<input type="text" class="form-control" th:field="*{image}" id="image" placeholder="image URL">
+		<p th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></p>
+		<label for="image">Image URL</label>
 	</div>
 	<button class="btn btn-lg btn-primary" type="submit">Submit</button>
 </div>
