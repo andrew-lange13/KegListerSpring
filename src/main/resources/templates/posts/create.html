@@ -13,7 +13,7 @@
 <br>
 <br>
 <div class="container-fluid">
-	<form th:action="@{/posts/create}" th:method="post" th:object="${post}">
+	<form th:action="@{/create}" th:method="post" th:object="${post}">
 		<div th:replace="partials :: createForm"></div>
 	</form>
 </div>
