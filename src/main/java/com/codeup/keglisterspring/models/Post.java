@@ -89,6 +89,14 @@ public class Post {
         this.owner = owner;
     }
 
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
+
     public Post() {
     }
 
@@ -103,4 +111,23 @@ public class Post {
         this.owner = owner;
     }
 
+    public Post(String name, String address, String website, String phone, String image, String type, User owner) {
+        this.name = name;
+        this.address = address;
+        this.website = website;
+        this.phone = phone;
+        this.image = image;
+        this.type = type;
+        this.owner = owner;
+    }
+
+    public Post(long id, String name, String address, String website, String phone, String image, User owner) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.website = website;
+        this.phone = phone;
+        this.image = image;
+        this.owner = owner;
+    }
 }
