@@ -92,4 +92,15 @@ public class Post {
     public Post() {
     }
 
+    public Post(long id, String name, String address, String website, String phone, String image, String type, User owner) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+        this.website = website;
+        this.phone = phone;
+        this.image = image;
+        this.type = type;
+        this.owner = owner;
+    }
+
 }
