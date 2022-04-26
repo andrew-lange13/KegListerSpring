@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="partials :: head"/>
+<head>
+	<meta charset="UTF-8">
+	<title>Create Post</title>
+</head>
+<body>
+<header th:replace="partials::header"/>
+<div class="container-fluid">
+	<h1>Add a Brewery</h1>
+</div>
+<br>
+<br>
+<div class="container-fluid">
+	<form th:action="@{/posts/create}" th:method="post" th:object="${post}">
+		<div th:replace="partials :: createForm"></div>
+	</form>
+</div>
+
+<footer th:replace="partials::footer"/>
+</body>
+</html>
