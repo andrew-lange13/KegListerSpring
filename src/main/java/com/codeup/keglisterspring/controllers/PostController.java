@@ -60,7 +60,8 @@ public class PostController {
             model.addAttribute("post", post);
             return "/posts/edit";
         }
-        post.setUser((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        post.setOwner((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal());
+        postDao.save(post);
         return "redirect:/";
     }
 
