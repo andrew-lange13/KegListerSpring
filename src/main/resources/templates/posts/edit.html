@@ -13,10 +13,10 @@
 <br>
 <br>
 <div class="container-fluid">
-	<form th:action="@{${id} + '/edit'}" th:method="post" th:object="${post}">
+	<form th:action="@{'/' + ${id} + '/edit'}" th:method="post" th:object="${post}">
 		<div th:replace="partials :: createForm"></div>
 		<input th:field="*{id}" hidden>
-		<input th:field="*{user}" hidden>
+		<input th:field="*{owner}" hidden>
 	</form>
 </div>
 
