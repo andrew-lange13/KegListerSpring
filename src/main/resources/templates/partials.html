@@ -160,6 +160,14 @@
 		<p th:if="${#fields.hasErrors('image')}" th:errors="*{image}"></p>
 		<label for="image">Image URL</label>
 	</div>
+	<div class="form-select">
+		<label>Select Type</label>
+		<select th:field="*{type}" name="type">
+			<option th:value="Brewpub">Brewpub</option>
+			<option th:value="Taproom">Taproom</option>
+			<option th:value="Microbrewery">Microbrewery</option>
+		</select>
+	</div>
 	<button class="btn btn-lg btn-primary" type="submit">Submit</button>
 </div>
 
