@@ -29,6 +29,12 @@ public class PostController {
         return "posts/index";
     }
 
+    @GetMapping("/{id}")
+    public String getSinglePost(@PathVariable long id, Model model){
+        model.addAttribute("post", postDao.getById(id));
+        return "posts/single";
+    }
+
     @GetMapping("/create")
     public String createPostGet(Model model){
         model.addAttribute("post", new Post());
