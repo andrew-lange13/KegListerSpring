@@ -50,9 +50,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(
-                        "/posts/create",
-                        "/posts/{id}/edit",
-                        "/posts/{id}/delete"
+                        "/create",
+                        "/{id}/edit",
+                        "/{id}/delete"
                 )
                 .authenticated()
         ;
