@@ -35,11 +35,18 @@ public class PostController {
         return "posts/single";
     }
 
+    @GetMapping("/{type}")
+    public String filterPostGet(@PathVariable String type, Model model){
+        model.addAttribute("post", postDao.findPostByType(type));
+        return "posts/filter";
+    }
+
     @GetMapping("/create")
     public String createPostGet(Model model){
         model.addAttribute("post", new Post());
         return "posts/create";
     }
+
 
     @PostMapping("/create")
     public String createPost(@Valid Post post, Errors validation, Model model){
