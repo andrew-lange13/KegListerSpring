@@ -10,24 +10,21 @@
 <div class="container px-lg-5">
 	<div class="p-4 p-lg-5 bg-light rounded-3 text-center">
 		<div class="m-4 m-lg-5">
-			<h1 class="display-5 fw-bold">Welcome to Keg-Lister!</h1>
-			<p class="fs-4">An ad-lister project by Charles Willcockson, Andrew Lange, and Nelson Delpozo of Codeup
+			<h1 class="display-5 fw-bold mb-2">Welcome to Keg-Lister!</h1>
+			<p class="fs-4 mb-3">An ad-lister project by Charles Willcockson, Andrew Lange, and Nelson Delpozo of Codeup
 				Sirius Cohort</p>
+			<div>
+				<a class="btn btn-primary btn-lg" href="/profile">Go to Profile</a>
+				<a class="btn btn-primary btn-lg" th:href="@{/sign-up}">Create an account</a>
+			</div>
+			<br>
+			<br>
+			<div>
+				<a class="btn btn-primary btn-lg" href="/ads/create">Add a Brewery</a>
+			</div>
+			<br>
+			<br>
 
-			<c:choose>
-				<c:when test="${isLoggedIn}">
-					<a class="btn btn-primary btn-lg" href="/profile">Go to Profile</a>
-				</c:when>
-				<c:otherwise>
-					<a class="btn btn-primary btn-lg" th:href="@{/sign-up}">Create an account</a>
-				</c:otherwise>
-
-			</c:choose>
-			<br>
-			<br>
-			<a class="btn btn-primary btn-lg" href="/ads/create">Add a Brewery</a>
-			<br>
-			<br>
 			<form class="form-inline my-2 my-lg-0 d-flex" action="/search" method="post">
 				<input class="form-control mr-sm-2 " name="search" type="search" placeholder="Search"
 				       aria-label="Search">
