@@ -31,15 +31,15 @@
 				<button class="btn btn-lg btn-primary my-2 my-sm-0" type="submit">Search</button>
 			</form>
 			<br>
-			<form th:action="@{/type}" th:object="${post}" method="post">
-				<label for="selector">Search By Category</label>
-				<select th:field="*{type}" id="selector" name="type">
-					<option th:value="Brewpub">Brewpub</option>
-					<option th:value="Taproom">Taproom</option>
-					<option th:value="Microbrewery">Microbrewery</option>
-				</select>
-				<button class="btn btn-lg btn-primary my-2 my-sm-0" type="submit">Go</button>
-			</form>
+<!--			<form th:action="@{'/' + ${type}}" th:object="${post}" method="post">-->
+<!--				<label for="selector">Search By Category</label>-->
+<!--				<select th:field="${type}" id="selector" name="type">-->
+<!--					<option th:value="Brewpub">Brewpub</option>-->
+<!--					<option th:value="Taproom">Taproom</option>-->
+<!--					<option th:value="Microbrewery">Microbrewery</option>-->
+<!--				</select>-->
+<!--				<button class="btn btn-lg btn-primary my-2 my-sm-0" type="submit">Go</button>-->
+<!--			</form>-->
 		</div>
 	</div>
 </div>
